@@ -1,0 +1,38 @@
+general {
+  interval = 1
+  separator = " "
+}
+
+order += "disk /"
+order += "battery 0"
+order += "memory"
+order += "volume master"
+order += "tztime local"
+
+disk "/" {
+  format = " %percentage_used"
+}
+
+battery 0 {
+  format = " %percentage"
+  last_full_capacity = true
+  threshold_type=percentage
+  low_threshold=10
+}
+
+memory {
+  memory_used_method = classical
+  format="%used/%total"
+}
+
+volume master {
+        format = " %volume"
+        format_muted = " (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+tztime local {
+    format = "W%U %d.%m.%Y %H:%M:%S"
+}
