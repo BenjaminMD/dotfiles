@@ -1,8 +1,0 @@
-configuration {
-    background-color: #FF0000;
-    border-color: rgba(0,0,1, 0.5);
-    text-color: SeaGreen;
-    opacity: 0.8;
-    show-icons: true;
-    icon-theme: "FontAwesome 14";
-}
