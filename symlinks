@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Define the location of your dotfiles repository
+DOTFILES_DIR="$HOME/dotfiles"
+
+# Define a list of dotfiles and their corresponding target locations
+# Each item in the list is in the format "dotfile:target_location"
+DOTFILE_LIST=(
+    "/nvim:.config/nvim"
+    "i3/:.config/i3"
+)
+
+# Loop through each item in the list and create a symbolic link in the dotfiles directory
+for item in "${DOTFILE_LIST[@]}"; do
+    # Split the item into the dotfile and target location
+    IFS=':' read -ra parts <<< "$item"
+    dotfile="${parts[0]}"
+    target="${parts[1]}"
+
+    # Define the source and target paths for the symbolic link
+    src="$DOTFILES_DIR/$dotfile"
+    target="$HOME/$target"
+
+    # Check if the source file or directory exists
+    if [[ ! -e "$src" ]]; then
+        echo "Error: $src does not exist. Skipping."
+        continue
+    fi
+
+    # Check if the target file or directory already exists
+    if [[ -e "$target" ]]; then
+        echo "Warning: $target already exists. Skipping."
+        continue
+    fi
+
+    # Create the symbolic link
+    echo "Creating symbolic link for $dotfile..."
+    ln -s "$src" "$target"
+done
