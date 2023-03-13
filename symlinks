@@ -6,6 +6,7 @@ DOTFILES_DIR="$HOME/dotfiles"
 # Define a list of dotfiles and their corresponding target locations
 # Each item in the list is in the format "dotfile:target_location"
 DOTFILE_LIST=(
+    "/i3status:.config/i3status"
     "/nvim:.config/nvim"
     "i3/:.config/i3"
 )
