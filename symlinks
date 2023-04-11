@@ -9,6 +9,7 @@ DOTFILE_LIST=(
     "/i3status:.config/i3status"
     "/nvim:.config/nvim"
     "i3/:.config/i3"
+    "newsboat/:./newsboat"
 )
 
 # Loop through each item in the list and create a symbolic link in the dotfiles directory

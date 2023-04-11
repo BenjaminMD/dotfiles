@@ -23,3 +23,9 @@ if vim.g.neovide == true then
   vim.api.nvim_set_keymap("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.01<CR>", { silent = true })
   vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
 end
+vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { silent = true })
+vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.jukit_shell_cmd = 'conda activate py311 && ipython3'
+

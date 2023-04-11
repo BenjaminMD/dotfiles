@@ -1,0 +1,2 @@
+refresh-on-startup yes
+macro v set browser "setsid --fork mpv --profile=1080p %u > /dev/null 2>&1"; open-in-browser; set browser "xdg-open %u";
