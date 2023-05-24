@@ -1,7 +1,7 @@
 return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
+   use 'wbthomason/packer.nvim'
 
-    use {
+   use {
         'phaazon/hop.nvim',
         branch = 'v2',
         config = function()
@@ -73,8 +73,22 @@ return require('packer').startup(function(use)
               extensions = {}
             } end
         } 
+    use {   
+        'lukas-reineke/indent-blankline.nvim',
+        config = function() require("indent_blankline").setup {
+            space_char_blankline = " ",
+            show_current_context = true,
+            show_current_context_start = true,
+        } end
+    }
 
   
+    use {
+        'ggandor/lightspeed.nvim',
+        config = function() require"lightspeed".setup{
+            substitute_chars = { ['\r'] = '¬', },
+        } end
+    }
     use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
