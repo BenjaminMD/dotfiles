@@ -17,14 +17,22 @@ require'nvim-treesitter.configs'.setup {
     max_file_lines = nil,
   },
   autotag = { enable = true },
-  incremental_selection = { enable = true },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn", -- set to `false` to disable one of the mappings
+      node_incremental = "grn",
+      scmpe_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
   indent = { enable = false },
   incremental_selection = {
     enable = true,
     keymaps = {
       init_selection = '<c-space>',
       node_incremental = '<c-space>',
-      scope_incremental = '<c-s>',
+      scope_incremental = '<c-a>',
       node_decremental = '<c-backspace>',
     },
   },

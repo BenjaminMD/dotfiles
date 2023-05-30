@@ -21,6 +21,10 @@ ZSH_THEME="robbyrussell"
 [[ -e ~/.zprofile ]] && emulate sh -c 'source ~/.zprofile'
 alias saxs='cd /home/ben/Documents/SAXS/3_TEX/'
 alias nn='/home/ben/Documents/python/nifty-nucleation'
+alias rm='trash'
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias sl='ls'
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -110,8 +114,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
