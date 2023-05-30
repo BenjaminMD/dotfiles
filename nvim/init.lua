@@ -51,4 +51,9 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 --
 
-
+vim.api.nvim_exec([[
+  augroup TerminalMappings
+    autocmd!
+    autocmd TermOpen * tnoremap <buffer> <Esc> <C-\><C-n>
+  augroup END
+]], false)
