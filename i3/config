@@ -176,3 +176,10 @@ client.unfocused #333333 #444444 #bbbbbb #292d2e #222222
 client.urgent #880000 #444444 #ffffff #880000 #900000
 client.placeholder #000000 #444444 #ffffff #000000 #0c0c0c
 client.background #ffffff 
+
+bindsym $mod+Ctrl+Right move workspace to output right
+bindsym $mod+Ctrl+Left move workspace to output left
+
+# run screen layout script
+exec --no-startup-id ./layout.sh
+
